@@ -33,4 +33,3 @@ resource "azurerm_resource_group" "rg_aca" {
   name     = "rg-${var.prefix}"
   location = "West Europe"
 }
-
