@@ -18,7 +18,7 @@ terraform init
 # Execute the Terraform plan
 terraform plan
 # Apply the Terraform plan
-terrafrom apply
+terraform apply
 # Destroy the Terraform environment
 terraform destroy
 ```
