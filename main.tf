@@ -2,7 +2,7 @@
 ############# Locals ###########
 ################################
 
-# define locals which will not change accross environments
+# define locals that will not change accross environments
 locals {
   # Common tags to be assigned to all resources
   common_tags = {
@@ -32,4 +32,5 @@ data "azurerm_client_config" "current" {
 resource "azurerm_resource_group" "rg_aca" {
   name     = "rg-${var.prefix}"
   location = "West Europe"
+  tags     = local.common_tags
 }
