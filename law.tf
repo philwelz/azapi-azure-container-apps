@@ -4,7 +4,7 @@
 
 # Create Log Analytics Workspace
 resource "azurerm_log_analytics_workspace" "law" {
-  name                = "law-${var.prefix}"
+  name                = "law-${var.prefix}-${var.stage}"
   location            = azurerm_resource_group.rg_aca.location
   resource_group_name = azurerm_resource_group.rg_aca.name
   sku                 = "PerGB2018"

@@ -6,7 +6,7 @@
 locals {
   # Common tags to be assigned to all resources
   common_tags = {
-    env       = "demo"
+    env       = var.stage
     managedBy = data.azurerm_client_config.current.client_id
     project   = var.prefix
 
@@ -30,7 +30,7 @@ data "azurerm_client_config" "current" {
 ################################
 
 resource "azurerm_resource_group" "rg_aca" {
-  name     = "rg-${var.prefix}"
+  name     = "rg-${var.prefix}-${var.stage}"
   location = "West Europe"
   tags     = local.common_tags
 }

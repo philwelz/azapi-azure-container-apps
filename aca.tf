@@ -1,6 +1,7 @@
+
 resource "azapi_resource" "aca_sample" {
-  type      = "Microsoft.App/containerApps@2022-01-01-preview"
-  name      = "aca-${var.prefix}"
+  type      = "Microsoft.App/containerApps@2022-03-01"
+  name      = "aca-${var.prefix}-${var.stage}"
   location  = azurerm_resource_group.rg_aca.location
   parent_id = azurerm_resource_group.rg_aca.id
   tags      = local.common_tags
@@ -17,7 +18,7 @@ resource "azapi_resource" "aca_sample" {
       template : {
         containers : [
           {
-            image : "ghcr.io/whiteducksoftware/sample-mvc:fred"
+            image : var.container_image
             name : "fred"
           }
         ]

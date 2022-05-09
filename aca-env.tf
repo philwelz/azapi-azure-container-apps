@@ -1,6 +1,6 @@
 resource "azapi_resource" "aca_env" {
-  type      = "Microsoft.App/managedEnvironments@2022-01-01-preview"
-  name      = "aca-${var.prefix}-environment"
+  type      = "Microsoft.App/managedEnvironments@2022-03-01"
+  name      = "aca-${var.prefix}-${var.stage}-environment"
   location  = azurerm_resource_group.rg_aca.location
   parent_id = azurerm_resource_group.rg_aca.id
   tags      = local.common_tags
